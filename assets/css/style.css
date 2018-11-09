@@ -10,3 +10,21 @@ section {
     margin: auto;
     width: 600px;
 }
+
+.unsolved {
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    color: grey;
+    font-size: 15px;
+}
+
+.solved {
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    color: white;
+    font-size: 15px;
+
+    
+}
