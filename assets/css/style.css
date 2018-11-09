@@ -11,20 +11,29 @@ section {
     width: 600px;
 }
 
-#unsolved {
-    width: 20px;
-    height: 20px;
-    background-color: grey;
-    color: grey;
-    font-size: 15px;
+.unsolved {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 5px;
 }
 
-#solved {
+.solved {
     width: 20px;
     height: 20px;
-    background-color: grey;
-    color: white;
+    background-color: black;
+    color: green;
     font-size: 15px;
-
     
+}
+
+.wrong {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: red;
+    font-size: 25px;
+   
 }

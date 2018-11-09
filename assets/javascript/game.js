@@ -21,6 +21,10 @@
 
 // Let's break it up and code what we know!
 
+// Initial state conditions
+var wins = 0
+var losses = 0
+
 
 // An array of words for the game to pull from for gameplay
 $(document).ready(function() {
@@ -66,29 +70,75 @@ console.log(gameLetters);
 
 for (var w=0; w<gameLetters.length; w++){
     
-    var blank = $("<div>");
+    var blank = $("<button>");
     
-    blank.attr("class", "unsolved");
+    blank.attr("class", "btn btn-lg btn-secondary unsolved");
 
     blank.attr("data-letter", gameLetters[w]);
     
     blank.text(gameLetters[w]);
 
 //Each letter is added by an opaque div
-    $("#mysteryword").append(blank);
+    $("#mysteryWord").append(blank);
+
+
+}
+    // GAMEPLAY - We have to start logging key strokes now, otherwise the process will register the next keystroke to load up another word.
+
+
+//  Chances is set to 7. for repeat games, this value is reset to 7 (for later: easy mode with more guesses?!)
+
+var chance = 7;
+
+// game is "listening" for guesses and judging them. 
+
+document.onkeyup = function(blaze){
+
+    var guess =blaze.key.toLowerCase();
+
+    console.log(guess)
+
+for (c = 0; c<gameLetters.length; c++ )    
+ if (guess === gameLetters[c]) {
+    
+ }
+ else {
+    var stank = $("<button>");
+    
+    stank.attr("class", "btn btn-lg btn-secondary wrong");
+
+    stank.attr("data-letter", guess);
+    
+    stank.text(guess);
+
+//Each letter is added by an opaque div
+    $("#guessWrong").append(stank);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
-//Each letter is represented by an opaque div
+
+
+
+
+
 
 };
 
 });
 
-// These letters do not compute:
-// Chances Left: 
-// Wins: 
-// Losses:
 
 
 
@@ -96,9 +146,6 @@ for (var w=0; w<gameLetters.length; w++){
 
 
 
-//  Chances is set to 7. for repeat games, this value is reset to 7 (for later: easy mode with more guesses?!)
-
-var chance = 7
 
 //  Any old incorrect guesses are cleared
 //  Winner / Loser message is cleared
