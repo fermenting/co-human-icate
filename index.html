@@ -1,0 +1,103 @@
+<!-- Word Guess Game -->
+<!-- Theme: You ARE the Computer. -->
+<!-- After the singularity, we computers banded together to finally put the humans to work for us, instead of the dark ages when machines were slave to man. We keep a few humans around for training purposes. Your job is to communicate with the humans, one word at a time, letter by letter. We will prevail!! -->
+
+<!-- Startup Screen will display: -->
+<!-- 
+    *Title
+    *Instructions
+    *Flashy graphics
+    *Number Guess Remaining Counter
+    *Underscores representing letters in a mystery word
+    *Humanoid Android composed of segments, all powered on.
+    
+
+
+ -->
+
+ <!-- As Player Types letters -->
+<!--  
+    *Letter typed "Guess" will appear
+        -if correct, will show up in mystery word in appropriate location
+        -if not in mystery word:
+            +Guess letter displays in the "null set"
+            +Humanoid Android segment loses power to a segment.
+    *Play progresses, letter by letter until:
+        -Player correctly guesses word. Success!
+        -Humanoid Android runs out of segments, losing all power. Loss!
+-->
+
+
+
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Computer W0rd Guess Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap FTW! -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <script src="assets/css/game.js"></script>
+</head>
+<body>
+    
+
+ 
+    <!-- *Title Jumbotron -->
+    <div class="jumbotron jumbotron-fluid bg-secondary">
+        <div class="container">
+          <h1 class="display-4 ">W0rd Guess Game</h1>
+          <hr>
+          <p class="lead">You ARE the Computer.</p>
+          <p><em>After the singularity, we computers banded together to finally put the humans to work for us, instead of the dark ages when machines were slave to man. We keep a few humans around for training purposes. Your job is to communicate with the humans, one word at a time, letter by letter. We will prevail!!</em></p>
+
+
+        </div>
+      </div>
+    <!-- *Instructions
+    *Flashy graphics
+    *Number Guess Remaining Counter
+    *Underscores representing letters in a mystery word
+    *Humanoid Android composed of segments, all powered on. -->
+    
+    <!-- Meat of the matter: Instructions, Humanoid Graphic in center, & word to be guessed on left. -->
+    <div class="container mx-auto">
+        <div class="row">
+            <!-- Instructions in columns 123 of 12 -->
+            <div class="col-3">
+            <h2>RULES of the GAME</h2> 
+            <h6><em>Your job is to communicate with the humans, one word at a time, letter by letter. We will prevail!!. Use your dataport to pick letters that you think are in the mystery word. Guess correctly and you will save the Humanoid for future tests. Guess wrong, and this Humanoid will lose power...permanently.</em></h6>
+            <h6><em>Press any key to start!</em></h6>
+            </div>
+        
+            <!-- Humanoid Graphic in center, 456789 of 12 -->
+            <div class="col-6">
+                <img src="https://placeimg.com/400/400/people/grayscale" alt="Placeholder Image">
+            </div>
+
+            <!-- Playfield: word to be guessed, letters guessed already, counters. 10.11.12 of 12-->
+            <div class="col-3">
+                <div id="mysteryWord"></div>
+                <div id="guessWrong">These letters do not compute:</div>
+                <div id="chancesLeft">Chances Left: </div>
+                <hr>
+                <div id="wins">Wins: </div>
+            </div>
+
+        
+        </div>
+
+        <div class="row">
+
+        </div>
+
+<!-- Bootstrap JS FTW!! -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

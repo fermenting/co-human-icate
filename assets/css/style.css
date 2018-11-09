@@ -1,0 +1,12 @@
+/* Looking for a dark, computery feel here. light text on black backgrounds. */
+
+body {
+    /* background-color: black; */
+    font-family: 'Share Tech Mono', monospace;
+    /* color: greenyellow */
+}
+
+section {
+    margin: auto;
+    width: 600px;
+}
