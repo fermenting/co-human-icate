@@ -41,13 +41,13 @@ var wordBank = [
       "error",
        "design"];
 
-console.log(wordBank);
+// console.log(wordBank);
 
 document.onkeyup = function(stroke){
 
 var keyed =stroke.key.toLowerCase();
 
-console.log(keyed);
+// console.log(keyed);
 
 // for the browser to watch for an initial key stroke to start
 
@@ -59,12 +59,12 @@ console.log(keyed);
   //  A word is selected from the array 
 var gameWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
-console.log(gameWord);
+// console.log(gameWord);
 //  Word is seperated into individual letters
 
 var gameLetters = gameWord.split("");  
     
-console.log(gameLetters);
+// console.log(gameLetters);
 
 //  We need those letters! We need a for loop! We will iterate through the array of letters and create a div for each letter
 
@@ -74,7 +74,7 @@ for (var w=0; w<gameLetters.length; w++){
     
     blank.attr("class", "btn btn-lg btn-secondary unsolved");
 
-    blank.attr("data-letter", gameLetters[w]);
+    blank.attr("id", gameLetters[w]);
     
     blank.text(gameLetters[w]);
 
@@ -100,19 +100,18 @@ document.onkeyup = function(blaze){
 
 for (c = 0; c<gameLetters.length; c++ )    
  if (guess === gameLetters[c]) {
-    
+    console.log ("correct")
+
+    //use the id of the element to change the class to ".solved"
+    //check for unsolved elements. if no unsolved elements, game is won! Advance win counter by 1. Start new game!
+
  }
+ 
  else {
-    var stank = $("<button>");
-    
-    stank.attr("class", "btn btn-lg btn-secondary wrong");
 
-    stank.attr("data-letter", guess);
-    
-    stank.text(guess);
+    console.log("wrong")
 
-//Each letter is added by an opaque div
-    $("#guessWrong").append(stank);
+    //decrease chance counter. if counter reaches 0, game over. Advance Loss counter by 1. Start new game!
  }
 
 
@@ -120,24 +119,27 @@ for (c = 0; c<gameLetters.length; c++ )
 
 
 
+ // var stank = $(gameletters[c]);   
 
+//     stank.attr("class", "btn btn-lg btn-secondary wrong");
 
+//     stank.attr("data-letter", guess);
+    
+//     stank.text(guess);
 
-
-
-
-}
-
-
-
-
+// //Each letter is added by an opaque div
+//     $("#guessWrong").append(stank);
+ };
 
 
 
 
 };
 
+
 });
+
+
 
 
 
