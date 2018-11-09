@@ -110,7 +110,8 @@ for (c = 0; c<gameLetters.length; c++ )
  else {
 
     console.log("wrong")
-
+    
+    //modify a visual element on the humanoid to show how progress...or regress.
     //decrease chance counter. if counter reaches 0, game over. Advance Loss counter by 1. Start new game!
  }
 
