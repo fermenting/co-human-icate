@@ -23,51 +23,75 @@
 
 
 // An array of words for the game to pull from for gameplay
+$(document).ready(function() {
+console.log ("ready!!");
 
-var wordBank = ["computer", "information", "process", "program", "software", "hardware", "graphics", "error", "design"]
+var wordBank = [
+    "computer",
+ "information", 
+ "process",
+  "program",
+   "software",
+    "hardware",
+     "graphics",
+      "error",
+       "design"];
 
+console.log(wordBank);
 
+document.onkeyup = function(stroke){
+
+var keyed =stroke.key.toLowerCase();
+
+console.log(keyed);
 
 // for the browser to watch for an initial key stroke to start
 
-var hangMan = $("#mysteryWord")
+// var hangMan = $("#mysteryWord");
 
-$("#mysteryWord").keyup(function(){ 
+// console.log (hangMan);
+
+// $("#mysteryWord").on("click", function(){ 
   // GAME START    
 
   //  A word is selected from the array 
-var gameWord = Math.floor(Math.random() * wordBank.length)
+var gameWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 
+console.log(gameWord);
 //  Word is seperated into individual letters
 
 // Original attempt, then I found ".split"
 // for (t=0; t<gameWord.length; t++) {
-    gameWord.split("")
-
+    gameWord.split("");
+    
+console.log(gameWord);
 //  We need those letters! We need a for loop! We will iterate through the array of letters and create a div for each letter
 
 for (var w=0; w<gameWord.length; w++){
     
-    var blank = $("<div>")
+    var blank = $("<div>");
     
-    blank.attr("class", "unsolved")
+    blank.attr("class", "unsolved");
 
-    blank.attr("data-letter", gameWord[w])
+    blank.attr("data-letter", gameWord[w]);
     
-    blank.text(letters[b])
+    blank.text(letters[b]);
 
 //Each letter is added by an opaque div
     $("#mysteryword").append(blank);
 }
 
+
 //Each letter is represented by an opaque div
+
+};
 
 });
 
-
-
-
-
+// These letters do not compute:
+// Chances Left: 
+// Wins: 
+// Losses:
 
 
 var blank = $("<div>")
