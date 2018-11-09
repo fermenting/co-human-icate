@@ -30,8 +30,9 @@ var wordBank = ["computer", "information", "process", "program", "software", "ha
 
 // for the browser to watch for an initial key stroke to start
 
+var hangMan = $("#mysteryWord")
 
-$("#mysteryWord").keyup(function()){ 
+$("#mysteryWord").keyup(function(){ 
   // GAME START    
 
   //  A word is selected from the array 
@@ -44,7 +45,8 @@ var gameWord = Math.floor(Math.random() * wordBank.length)
     gameWord.split("")
 
 //  We need those letters! We need a for loop! We will iterate through the array of letters and create a div for each letter
-for (var w=0; w<gameWord.length){
+
+for (var w=0; w<gameWord.length; w++){
     
     var blank = $("<div>")
     
@@ -54,11 +56,13 @@ for (var w=0; w<gameWord.length){
     
     blank.text(letters[b])
 
+//Each letter is added by an opaque div
+    $("#mysteryword").append(blank);
 }
 
 //Each letter is represented by an opaque div
-    gameWord.length
-}
+
+});
 
 
 
@@ -70,7 +74,7 @@ var blank = $("<div>")
 
 
 
-}
+
 //  Chances is set to 7. for repeat games, this value is reset to 7 (for later: easy mode with more guesses?!)
 
 var chance = 7

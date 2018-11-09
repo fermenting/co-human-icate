@@ -11,7 +11,7 @@ section {
     width: 600px;
 }
 
-.unsolved {
+#unsolved {
     width: 20px;
     height: 20px;
     background-color: grey;
@@ -19,7 +19,7 @@ section {
     font-size: 15px;
 }
 
-.solved {
+#solved {
     width: 20px;
     height: 20px;
     background-color: grey;
