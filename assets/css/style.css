@@ -21,12 +21,12 @@ section {
 }
 
 .solved {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-color: black;
     color: green;
-    font-size: 15px;
-    
+    font-size: 25px;
+    padding: 5px;
 }
 
 .wrong {

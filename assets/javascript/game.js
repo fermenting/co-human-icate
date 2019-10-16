@@ -1,7 +1,7 @@
 // Initial state conditions
 var wins = 0
 var losses = 0
-var chance = 7;
+var chance = 100;
 var wordBank = [
   "computer", "information", "process", "program", "software", "hardware", "graphics", "error", "design"];
 
@@ -44,10 +44,10 @@ $(document).ready(function () {
       var guess = blaze.key.toLowerCase().replace(/[^a-z]/g,'');
       console.log(guess)
 
-      for (c = 0; c < gameLetters.length; c++)
-        if (guess === gameLetters[c]) {
+      for (i = 0; i < gameLetters.length; i++){
+        if (guess === gameLetters[i]) {
           //use the id of the element to change the class to ".solved"
-          $("#"+guess).removeClass("unsolved").addClass("solved")
+          $("#"+guess).each(function(){$(this).removeClass("unsolved").addClass("solved")})
 
           //check for unsolved elements. if no unsolved elements, game is won! Advance win counter by 1. Start new game!
           // .hasClass("unsolved")
@@ -55,16 +55,18 @@ $(document).ready(function () {
 
         else {
 
-          console.log("wrong")
           //modify a visual element on the humanoid to show how progress...or regress.
-          //decrease chance counter. if counter reaches 0, game over. Advance Loss counter by 1. Start new game!
+          //decrease chance counter. 
+       
         }
-
+      }
         $("#guessWrong").append(guess);
         chance--
-        $("#chancesLeft").append(chance)
-        console.log(chance);
-
+        $("#chancesLeft").text(chance)
+        //if counter reaches 0, game over. Advance Loss counter by 1. Start new game!
+        if (chance === 0) {location.reload()}
+     
+      
     };
   };
 });
