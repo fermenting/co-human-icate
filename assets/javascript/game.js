@@ -4,8 +4,8 @@ var losses = 0
 var chance = 100;
 var gameLetters = [];
 var wordBank = [
-  // "computerized", "information", "process", "program", "software", "hardware", "graphical", "error", "charger"];
-  "sssssss"];
+  "computerized", "information", "process", "program", "software", "hardware", "graphical", "error", "charger"];
+  // "sssssss"];
 
 
 $(document).ready(function () {
@@ -20,8 +20,7 @@ $(document).ready(function () {
       //iterate through the array of letters and create a div for each letter
       for (var i = 0; i < gameLetters.length; i++) {
         var blank = $("<p>");
-        blank.attr("class", "btn btn-lg btn-secondary unsolved");
-        blank.attr("id", gameLetters[i]);
+        blank.addClass("btn btn-lg btn-secondary unsolved " + gameLetters[i]);
         blank.text(gameLetters[i]);
         //Each letter is added to an opaque div
         $("#mysteryWord").append(blank);
@@ -39,9 +38,13 @@ $(document).ready(function () {
           // do {$("#" + guess).removeClass("unsolved").addClass("solved");}
           // while ($("#" + guess).hasClass("unsolved")) 
           function playGame() {
-            if ($("#" + guess).hasClass("unsolved")) {
-              $("#" + guess).removeClass("unsolved").addClass("solved");
-              playGame();
+            
+            // $("#mysteryWord").find("#" + guess).removeClass("unsolved").addClass("solved")
+
+            if ($("." + guess).hasClass("unsolved")) {
+              // $("#mysteryWord").find("#" + guess).removeClass("unsolved").addClass("solved")
+
+              $("." + guess).removeClass("unsolved").addClass("solved");
             } else {
               //modify a visual element on the humanoid to show how progress...or regress.
               //decrease chance counter. 
