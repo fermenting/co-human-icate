@@ -1,7 +1,7 @@
 //TODO
 //make CSS better
+//fix click cheat
 //readme
-//github pages
 //organize, DRY
 
 // Initial state conditions
@@ -58,7 +58,7 @@ function selectWord() {
   uniqueLetters = new Set(gameLetters).size
   //iterate through the array of letters and create a div for each letter
   for (var i = 0; i < gameLetters.length; i++) {
-    var blank = $("<p>");
+    var blank = $("<btn>");
     blank.addClass("btn btn-lg btn-secondary unsolved " + gameLetters[i]);
     blank.text(gameLetters[i]);
     //Each letter is added to an opaque div
@@ -79,7 +79,11 @@ function playGame() {
   } else {
     //modify a visual element on the humanoid to show how progress...or regress.
     //decrease chance counter. 
-    $("#guessWrong").append(guess);
+
+    var blank = $("<btn>");
+    blank.addClass("btn btn-lg text-danger wrong" + guess);
+    blank.text(guess);
+    $("#guessWrong").append(blank);
     chance--
     $("#chancesLeft").text(chance)
     //if counter reaches 0, game over. Advance Loss counter by 1. Start new game!

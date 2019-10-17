@@ -1,48 +1,42 @@
 /* Looking for a dark, computery feel here. light text on black backgrounds. */
 
 body {
-    /* background-color: black; */
+    background-color: black;
     font-family: 'Share Tech Mono', monospace;
-    /* color: greenyellow */
+    color: #71C600
 }
 
-.display-4 { 
-    text-decoration: wavy;
-}
 
 section {
     margin: auto;
     width: 600px;
 }
 
-.unsolved {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    color: white;
+
+
+.solved, .wrong, .unsolved {
+    width: 50px;
+    height: 50px;
     font-size: 25px;
     padding: 5px;
+}
+
+.unsolved {
+    background-color: white;
+    color: white;
 }
 
 .solved {
-    width: 40px;
     height: 40px;
     background-color: black;
     color: green;
-    font-size: 15px;
-    font-size: 25px;
-    padding: 5px;
-}
+    }
 
 .wrong {
-    width: 40px;
-    height: 40px;
     background-color: black;
-    color: red;
-    font-size: 25px;
-   
+    color: red;   
 }
 
-.btn-secondary:hover{
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary.active {
     color: #5a6268
 }
