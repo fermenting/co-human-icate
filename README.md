@@ -38,4 +38,5 @@ I would like to make it possible for a user to create their own word bank, and s
 
 * To you, for playing my game or reading my code.
 * To Jerome, Jimmy, & Sasha for showing me the way
+* Stack Overflow, W3Schools, Google, Github & Good Documentation everywhere!
 * To Laura & Merlin, for their inspiration.
