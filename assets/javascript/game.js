@@ -1,8 +1,10 @@
 //TODO
-//make CSS better
+//Mobile - appearance & keyboard
 //fix click cheat
 //readme
-//organize, DRY
+//refactor
+//
+
 
 // Initial state conditions
 var wins = 0;
@@ -35,10 +37,9 @@ function keyListen() {
 };
 
 
-
 function isLetter(str) {
   return str.length === 1 && str.match(/^[A-Za-z]+$/i);
-  
+
 };
 
 function newGame() {
@@ -69,13 +70,14 @@ function selectWord() {
 function playGame() {
   if ($("." + guess).hasClass("unsolved")) {
     $("." + guess).removeClass("unsolved").addClass("solved");
-
     uniqueLetters--;
     if (uniqueLetters === 0) {
       wins++;
       $("#wins").text(wins);
-      newGame();
-    }
+      $("#chancesLeft").prepend("you WON with ")
+      $("#chancesLeft").append(" chances left!")
+      gameOverScreen();
+  }
   } else {
     //modify a visual element on the humanoid to show how progress...or regress.
     //decrease chance counter. 
@@ -90,24 +92,17 @@ function playGame() {
     if (chance < 1) {
       losses++;
       $("#losses").text(losses)
-      newGame();
+      $("#chancesLeft").html("none, because you LOST!")
+      gameOverScreen();
     };
-  }
+  };
+};
+
+function gameOverScreen(){
+  document.onkeyup = function (type) {
+    if (type.key) {
+      newGame();
+      keyListen();
+    };
+  };
 }
-
-// var already = false;
-//         for (var i = 0; i < alreadyGuessed.length; i++) {
-//           if (guess === alreadyGuessed[i]) {
-//             already = true
-//           }
-//           if (already) {
-//             already = false;
-//             return
-//           }
-//           else {
-
-
-
-  // switch (guess) {
-  //   case 
-  // }
