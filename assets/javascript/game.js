@@ -20,35 +20,6 @@ var guess;
 selectWord();
 keyListen();
 
-function keyListen() {
-  $(document).ready(function () {
-    document.onkeyup = function (type) {
-
-      guess = type.key
-      console.log(guess)
-      guess = isLetter(guess.toLowerCase());
-
-      if (!alreadyGuessed[guess]) {
-        alreadyGuessed[guess] = true;
-        playGame();
-      }
-    };
-  });
-};
-
-
-function isLetter(str) {
-  return str.length === 1 && str.match(/^[A-Za-z]+$/i);
-
-};
-
-function newGame() {
-  $("#mysteryWord").empty();
-  $("#guessWrong").empty();
-  alreadyGuessed = {};
-  selectWord();
-}
-
 function selectWord() {
   chance = 7
   $("#chancesLeft").text(chance)
@@ -66,6 +37,26 @@ function selectWord() {
     $("#mysteryWord").append(blank);
   };
 }
+
+function keyListen() {
+  $(document).ready(function () {
+    document.onkeyup = function (type) {
+
+      guess = type.key
+      console.log(guess)
+      guess = isLetter(guess.toLowerCase());
+
+      if (!alreadyGuessed[guess]) {
+        alreadyGuessed[guess] = true;
+        playGame();
+      }
+    };
+  });
+};
+
+function isLetter(str) {
+  return str.length === 1 && str.match(/^[A-Za-z]+$/i);
+};
 
 function playGame() {
   if ($("." + guess).hasClass("unsolved")) {
@@ -105,4 +96,11 @@ function gameOverScreen(){
       keyListen();
     };
   };
+}
+
+function newGame() {
+  $("#mysteryWord").empty();
+  $("#guessWrong").empty();
+  alreadyGuessed = {};
+  selectWord();
 }

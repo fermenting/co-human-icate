@@ -28,6 +28,8 @@ I tried to limit my technologies to the following:
 
 There are a few issues still, such as _(spoiler alert!)_ you can click on the unguessed letter tiles and see what the letter should be. I suspect this is due to some baked-in bootstrap button functionality. I don't need to use buttons to represent the letters to guess, I just chose that to expedite development.
 
+my keylistener is including keys such as Shift, Alt, and Ctrl, which I need to exclude from gameplay.
+
 In game.js, I noticed an arrow anti-pattern developing, which I tried to mitigate by separating functionality to separate functions. I would like to refactor it and make clean, as well as optimize it to O(n) or faster.
 
 As mentioned, the game is not mobile friendly - that is the next major aspect I would like to develop.
