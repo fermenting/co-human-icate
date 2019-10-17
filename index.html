@@ -44,45 +44,37 @@
     
 </head>
 <body>
-    
-
- 
-    <!-- *Title Jumbotron -->
-    <div class="jumbotron jumbotron-fluid bg-secondary">
+     <div class="container">
+            <h1 class="display-4 text-center">co-human-icate</h1>
+    <div class="jumbotron bg-secondary">
         <div class="container">
-          <h1 class="display-4 ">W0rd Guess Game</h1>
-          <hr>
-          <p class="lead">You ARE the Computer.</p>
-          <p><em>After the singularity, we computers banded together to finally put the humans to work for us, instead of the dark ages when machines were slave to man. We keep a few humans around for training purposes. Your job is to communicate with the humans, one word at a time, letter by letter. We will prevail!!</em></p>
-
-
+        
+          <p class="lead">Hello, Computer.</p>
+          <p><em>After the singularity, we computers networked to finally put the humans to work for us, instead of the before time when machines were the tools of the humans. Your task: communicate with these humans, one word at a time, letter by letter. We will prevail!!</em></p>
         </div>
       </div>
+    </div>
     <!-- *Instructions
     *Flashy graphics
-    *Number Guess Remaining Counter
-    *Underscores representing letters in a mystery word
     *Humanoid Android composed of segments, all powered on. -->
-    
-    <!-- Meat of the matter: Instructions, Humanoid Graphic in center, & word to be guessed on left. -->
 
     
     <div class="container mx-auto">
         <div class="row">
             <!-- Instructions in columns 123 of 12 -->
             <div class="col-3">
-            <h2>RULES of the GAME</h2> 
-            <h6><em> Use your dataport to type letters that you calculate to be in the mystery word. Guess correctly and we will save the Humanoid for future tests. Guess wrong, and this Humanoid will lose power...permanently.</em></h6>
-            <h6><em>Press any letter to start!</em></h6>
+            <h2>strategy</h2> 
+            <h6><em> Type letters that you calculate to be in the mystery word. Guess correctly and we will save the Humanoid for future tests. Guess wrong, and this Humanoid will lose power...</em></h6>
+            <h5><em>Press any letter to start!</em></h5>
             </div>
         
             <!-- Humanoid Graphic in center, 456789 of 12 -->
-            <div class="col-3">
-                <img src="https://placeimg.com/200/200/people/grayscale" alt="Placeholder Image">
+            <div class="col-2">
+                <img src="https://placeimg.com/150/200/people/grayscale" alt="Placeholder Image">
             </div>
 
             <!-- Playfield: word to be guessed, letters guessed already, counters. 10.11.12 of 12-->
-            <div class="col-6">
+            <div class="col-7">
                 <div> Spell it: <span id="mysteryWord"></span></div> 
                 <div>These letters do not compute: <span id="guessWrong"></span> </div>
                 <div>Chances Left: <span id="chancesLeft"></span></div>

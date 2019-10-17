@@ -6,6 +6,10 @@ body {
     /* color: greenyellow */
 }
 
+.display-4 { 
+    text-decoration: wavy;
+}
+
 section {
     margin: auto;
     width: 600px;
@@ -37,4 +41,8 @@ section {
     color: red;
     font-size: 25px;
    
+}
+
+.btn-secondary:hover{
+    color: #5a6268
 }

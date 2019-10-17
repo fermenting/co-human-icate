@@ -1,7 +1,5 @@
 //TODO
-//do nothing when a mistake letter is repeated
 //make CSS better
-//fix hover cheat
 //readme
 //github pages
 //organize, DRY
@@ -15,6 +13,7 @@ var uniqueLetters = 0;
 var alreadyGuessed = {};
 var wordBank = [
   "computerized", "information", "process", "program", "software", "hardware", "graphical", "error", "charger", "debugging", "networking"];
+var guess;
 
 selectWord();
 keyListen();
@@ -23,52 +22,23 @@ function keyListen() {
   $(document).ready(function () {
     document.onkeyup = function (type) {
 
+      guess = type.key
+      console.log(guess)
+      guess = isLetter(guess.toLowerCase());
 
-      // GAME START    
-      var guess = type.key.replace(/[^A-Za-z]+$/g, '').toLowerCase()
-      console.log("guess " + guess)
-
-
-      // if (type.key.replace(/[^a-z]/g, '')) {
-      //   var guess = type.key.toLowerCase();
-      //   console.log(guess)
       if (!alreadyGuessed[guess]) {
         alreadyGuessed[guess] = true;
-
         playGame();
-        
-
-        function playGame() {
-          if ($("." + guess).hasClass("unsolved")) {
-            $("." + guess).removeClass("unsolved").addClass("solved");
-        
-            uniqueLetters--;
-            if (uniqueLetters === 0) {
-              wins++;
-              $("#wins").text(wins);
-              newGame();
-            }
-          } else {
-            //modify a visual element on the humanoid to show how progress...or regress.
-            //decrease chance counter. 
-            $("#guessWrong").append(guess);
-            chance--
-            $("#chancesLeft").text(chance)
-            //if counter reaches 0, game over. Advance Loss counter by 1. Start new game!
-            if (chance < 1) {
-              losses++;
-              $("#losses").text(losses)
-              newGame();
-            };
-          }
-        };
-
-
-      } else {
-        return
       }
     };
   });
+};
+
+
+
+function isLetter(str) {
+  return str.length === 1 && str.match(/^[A-Za-z]+$/i);
+  
 };
 
 function newGame() {
@@ -96,7 +66,30 @@ function selectWord() {
   };
 }
 
+function playGame() {
+  if ($("." + guess).hasClass("unsolved")) {
+    $("." + guess).removeClass("unsolved").addClass("solved");
 
+    uniqueLetters--;
+    if (uniqueLetters === 0) {
+      wins++;
+      $("#wins").text(wins);
+      newGame();
+    }
+  } else {
+    //modify a visual element on the humanoid to show how progress...or regress.
+    //decrease chance counter. 
+    $("#guessWrong").append(guess);
+    chance--
+    $("#chancesLeft").text(chance)
+    //if counter reaches 0, game over. Advance Loss counter by 1. Start new game!
+    if (chance < 1) {
+      losses++;
+      $("#losses").text(losses)
+      newGame();
+    };
+  }
+}
 
 // var already = false;
 //         for (var i = 0; i < alreadyGuessed.length; i++) {
